@@ -118,7 +118,19 @@ export default class Presentation extends React.Component {
             Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
           </Text>
           <Text textAlign="left">
-            <Link href="https://github.com/acdlite/react-fiber-architecture" textAlign="left">Read more.</Link>
+            <Link href="https://github.com/acdlite/react-fiber-architecture" textAlign="left">Read more (by Andrew Clark).</Link>
+          </Text>
+          <Text textAlign="left">
+            <Link href="https://dou.ua/lenta/articles/react-fiber/" textAlign="left">Good article on DOU.</Link>
+          </Text>
+          <Text textAlign="left">
+            <Link href="https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e" textAlign="left">Another on medium.</Link>
+          </Text>
+          <Text textAlign="left">
+            <Link href="https://www.youtube.com/watch?v=ZCuYPiUIONs" textAlign="left">Fascinating fiber review by Lin Clark (React Conf 2017).</Link>
+          </Text>
+          <Text textAlign="left">
+            <Link href="https://present-fiber-demo.herokuapp.com/" textAlign="left">Fiber example.</Link>
           </Text>
         </Slide>
 
