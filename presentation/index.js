@@ -23,6 +23,8 @@ const theme = createTheme({
 const images = {
   reactComponentTree: require('../assets/images/react-component-tree.png'),
   virtualDom: require('../assets/images/virtual-dom.png'),
+  trianglesDemoWithTimeSlicing: require("../assets/images/triangles-demo-with-time-slicing.png"),
+  trianglesDemoWithoutTimeSlicing: require("../assets/images/triangles-demo-without-time-slicing.png"),
 };
 
 export default class Presentation extends React.Component {
@@ -132,6 +134,18 @@ export default class Presentation extends React.Component {
           <Text textAlign="left">
             <Link href="https://present-fiber-demo.herokuapp.com/" textAlign="left">Fiber example.</Link>
           </Text>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary" textAlign="left">
+            React Fiber Example
+          </Heading>
+          <iframe width="1200" height="600" src="https://www.youtube.com/embed/Qu_6ItnlDQg" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+        </Slide>
+
+        <Slide>
+          <Image src={images.trianglesDemoWithoutTimeSlicing} width={1200} />
+          <Image src={images.trianglesDemoWithTimeSlicing} width={1200} />
         </Slide>
 
       </Deck>
