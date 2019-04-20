@@ -1,0 +1,8 @@
+<App>
+    <Header />
+    <CommentForm />
+    <CommentsList>
+        <Comment />
+        <Comment />
+    </CommentsList>
+</App>

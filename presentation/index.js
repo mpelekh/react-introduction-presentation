@@ -83,7 +83,6 @@ export default class Presentation extends React.Component {
           <Text textColor="textColorDark" textAlign="left">
             will be transpiled into js
           </Text>
-          <Fill />
           <CodePane
             lang="jsx"
             textSize="1em"
@@ -91,11 +90,16 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide>
+        <Slide align="flex-start flex-start">
           <Heading size={6} textColor="secondary">
             Components
           </Heading>
           <Image src={images.reactComponentTree} width={1200} />
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/3-components-tree.example')}
+          />
         </Slide>
 
         <Slide>
@@ -143,7 +147,7 @@ export default class Presentation extends React.Component {
           <iframe width="1200" height="600" src="https://www.youtube.com/embed/Qu_6ItnlDQg" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
         </Slide>
 
-        <Slide>
+        <Slide align="flex-start flex-start">
           <Image src={images.trianglesDemoWithoutTimeSlicing} width={1200} />
           <Image src={images.trianglesDemoWithTimeSlicing} width={1200} />
         </Slide>
