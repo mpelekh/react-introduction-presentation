@@ -2,10 +2,13 @@
 import React from 'react';
 
 // Import Spectacle Core tags
-import {BlockQuote, Cite, Deck, Heading, ListItem, List, Quote, Slide, Text, CodePane, Fit, Fill, Image, Link } from 'spectacle';
+import {BlockQuote, Cite, Deck, Heading, ListItem, List, Quote, Slide, Text, CodePane, Fit, Fill, Image, Layout } from 'spectacle';
 
 // Import Components
 import { ReactLogo } from './components/ReactLogo';
+import { CustomText } from './components/CustomText';
+import { Margin } from './components/Margin';
+import { CustomLink as Link } from './components/CustomLink';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -18,6 +21,7 @@ const theme = createTheme({
   secondary: '#61dafb',
   textColorLight: '#ffffff',
   textColorDark: '#778899',
+  linkColor: "#5f9ea0",
 });
 
 const images = {
@@ -69,20 +73,18 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgColor="primary" textColor="textColorLight">
-          <Text textColor="textColorLight">
-            <strong>JavaScript XML</strong> – an XML-like syntax extension of JavaScript.
-          </Text>
-          <Text textColor="textColorDark" textAlign="left">
-            This JSX
-          </Text>
+          <CustomText textAlign="center">
+            <strong>JavaScript XML</strong> (JSX) – an XML-like syntax extension of JavaScript.
+          </CustomText>
+          <Margin />
           <CodePane
             lang="jsx"
             textSize="1em"
             source={require('raw-loader!../assets/code-examples/1-jsx.example')}
           />
-          <Text textColor="textColorDark" textAlign="left">
+          <CustomText>
             will be transpiled into js
-          </Text>
+          </CustomText>
           <CodePane
             lang="jsx"
             textSize="1em"
@@ -90,11 +92,11 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide align="flex-start flex-start">
-          <Heading size={6} textColor="secondary">
-            Components
-          </Heading>
-          <Image src={images.reactComponentTree} width={1200} />
+        <Slide align="flex-start flex-start" width="1200px" >
+          <CustomText textAlign="center">
+            Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+          </CustomText>
+          <Image src={images.reactComponentTree} width={1000} />
           <CodePane
             lang="jsx"
             textSize="1em"
@@ -102,14 +104,36 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        <Slide fir>
+          <Heading size={6} textColor="secondary">
+            Function and Class Components
+          </Heading>
+          <CustomText>
+            The simplest way to define a component is to write a JavaScript function:
+          </CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/4-function-component.example')}
+          />
+          <CustomText>
+            You can also use an ES6 class to define a component:
+          </CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/5-class-component.example')}
+          />
+        </Slide>
+
         <Slide>
           <Heading size={6} textColor="secondary">
             What is the Virtual DOM?
           </Heading>
-          <Text textAlign="left" textColor="textColorLight">
+          <CustomText>
             The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
-            This process is called <Link href="https://reactjs.org/docs/reconciliation.html">reconciliation.</Link>
-          </Text>
+            This process is called <Link href="https://reactjs.org/docs/reconciliation.html"><strong>reconciliation</strong>.</Link>
+          </CustomText>
         </Slide>
 
         <Slide>
@@ -120,24 +144,17 @@ export default class Presentation extends React.Component {
           <Heading size={6} textColor="secondary">
             What is “React Fiber”?
           </Heading>
-          <Text textAlign="left" textColor="textColorLight">
+          <CustomText>
             Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.
-          </Text>
-          <Text textAlign="left">
-            <Link href="https://github.com/acdlite/react-fiber-architecture" textAlign="left">Read more (by Andrew Clark).</Link>
-          </Text>
-          <Text textAlign="left">
-            <Link href="https://dou.ua/lenta/articles/react-fiber/" textAlign="left">Good article on DOU.</Link>
-          </Text>
-          <Text textAlign="left">
-            <Link href="https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e" textAlign="left">Another on medium.</Link>
-          </Text>
-          <Text textAlign="left">
-            <Link href="https://www.youtube.com/watch?v=ZCuYPiUIONs" textAlign="left">Fascinating fiber review by Lin Clark (React Conf 2017).</Link>
-          </Text>
-          <Text textAlign="left">
-            <Link href="https://present-fiber-demo.herokuapp.com/" textAlign="left">Fiber example.</Link>
-          </Text>
+          </CustomText>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem textSize="smaller"><Link href="https://github.com/acdlite/react-fiber-architecture" textAlign="left">Read more (by Andrew Clark).</Link></ListItem>
+            <ListItem textSize="smaller"><Link href="https://dou.ua/lenta/articles/react-fiber/" textAlign="left">Good article on DOU.</Link></ListItem>
+            <ListItem textSize="smaller"><Link href="https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e" textAlign="left">Another on medium.</Link></ListItem>
+            <ListItem textSize="smaller"><Link href="https://www.youtube.com/watch?v=ZCuYPiUIONs" textAlign="left">Fascinating fiber review by Lin Clark (React Conf 2017).</Link></ListItem>
+            <ListItem textSize="smaller"><Link href="https://present-fiber-demo.herokuapp.com/" textAlign="left">Fiber example.</Link></ListItem>
+          </List>
         </Slide>
 
         <Slide>
