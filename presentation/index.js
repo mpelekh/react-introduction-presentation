@@ -9,6 +9,7 @@ import { ReactLogo } from './components/ReactLogo';
 import { CustomText } from './components/CustomText';
 import { Margin } from './components/Margin';
 import { CustomLink as Link } from './components/CustomLink';
+import { Emphasize } from './components/Emphasize';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -21,7 +22,7 @@ const theme = createTheme({
   secondary: '#61dafb',
   textColorLight: '#ffffff',
   textColorDark: '#778899',
-  linkColor: "#5f9ea0",
+  linkColor: "#4682b4",
 });
 
 const images = {
@@ -74,7 +75,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgColor="primary" textColor="textColorLight">
           <CustomText textAlign="center">
-            <strong>JavaScript XML</strong> (JSX) – an XML-like syntax extension of JavaScript.
+            <Emphasize>JavaScript XML</Emphasize> (JSX) – an XML-like syntax extension of JavaScript.
           </CustomText>
           <Margin />
           <CodePane
@@ -104,7 +105,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide fir>
+        <Slide>
           <Heading size={6} textColor="secondary">
             Function and Class Components
           </Heading>
@@ -124,6 +125,29 @@ export default class Presentation extends React.Component {
             textSize="1em"
             source={require('raw-loader!../assets/code-examples/5-class-component.example')}
           />
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Rendering a Component
+          </Heading>
+          <Margin />
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/6-render-component.example')}
+          />
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Component's Properties
+          </Heading>
+          <CustomText>
+            <Emphasize>Props</Emphasize>(short for properties) are a Component's configuration, its options.<br/>
+            Received from above and <Emphasize>immutable.</Emphasize><br/>
+            A Component can't change its props.
+          </CustomText>
         </Slide>
 
         <Slide>
