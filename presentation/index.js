@@ -3,6 +3,7 @@ import React from 'react';
 
 // Import Spectacle Core tags
 import {BlockQuote, Cite, Deck, Heading, ListItem, List, Quote, Slide, Text, CodePane, Fit, Fill, Image, Layout } from 'spectacle';
+import CodeSlide from 'spectacle-code-slide';
 
 // Import Components
 import { ReactLogo } from './components/ReactLogo';
@@ -35,7 +36,7 @@ const images = {
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
+      <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme} contentWidth={1200}>
         <Slide transition={['zoom']} bgColor="primary">
           <ReactLogo />
           <Heading size={1} textColor="secondary">
@@ -97,7 +98,7 @@ export default class Presentation extends React.Component {
           <CustomText textAlign="center">
             Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
           </CustomText>
-          <Image src={images.reactComponentTree} width={1000} />
+          <Image src={images.reactComponentTree} width={1200} height={500} />
           <CodePane
             lang="jsx"
             textSize="1em"
@@ -161,7 +162,89 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <Image src={images.virtualDom} width={1200} />
+          <Heading size={6} textColor="secondary">
+            Virtual DOM
+          </Heading>
+          <Image src={images.virtualDom} height={600}/>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Update component via props
+          </Heading>
+          <Margin />
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/7-update-component-via-props.example')}
+          />
+        </Slide>
+
+        <Slide>
+          <CustomText>
+            Ideally we want to write this once and have the Clock update itself.
+          </CustomText>
+          <Margin />
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/8-clock-without-props.example')}
+          />
+          <CustomText>
+            To implement this, we need to add <Emphasize>“state”</Emphasize> to the Clock component.
+          </CustomText>
+          <CustomText>
+            <Emphasize>State</Emphasize> is similar to props, but it is private and fully controlled by the component.
+          </CustomText>
+        </Slide>
+
+        <Slide>
+          <CustomText>
+            The result looks like this:
+          </CustomText>
+          <Margin />
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/9-clock-with-state.example')}
+          />
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          code={require('raw-loader!../assets/code-examples/10-clock-add-lifecycle-methods.example')}
+          ranges={[
+            { loc: [0, 30], title: "Adding Lifecycle Methods to a Class" },
+            { loc: [6, 9] },
+            { loc: [10, 13] },
+            { loc: [14, 19] },
+            { loc: [20, 28] }
+          ]}
+          align="flex-start flex-start"
+        />
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Do Not Modify State Directly
+          </Heading>
+          <CustomText>
+            This will not re-render a component:
+          </CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/11-wrong-set-state.example')}
+          />
+          <CustomText>
+            Instead, use <code>setState()</code>:
+          </CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/12-correct-set-state.example')}
+          />
+          <CustomText>The only place where you can assign <code>this.state</code> is the constructor.</CustomText>
         </Slide>
 
         <Slide>

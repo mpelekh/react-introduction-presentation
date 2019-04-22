@@ -1,0 +1,2 @@
+// Correct
+this.setState({comment: 'Hello'});

@@ -1,0 +1,2 @@
+// Wrong
+this.state.comment = 'Hello';
