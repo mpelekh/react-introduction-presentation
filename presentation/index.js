@@ -31,6 +31,7 @@ const images = {
   virtualDom: require('../assets/images/virtual-dom.png'),
   trianglesDemoWithTimeSlicing: require("../assets/images/triangles-demo-with-time-slicing.png"),
   trianglesDemoWithoutTimeSlicing: require("../assets/images/triangles-demo-without-time-slicing.png"),
+  reactLifecycleMethodsOld: require("../assets/images/react-component-lifecycle-methods-old.png"),
 };
 
 export default class Presentation extends React.Component {
@@ -317,6 +318,10 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <Link href="https://codesandbox.io/s/lro5jp75ll" textSize="larger">Component Lifecycle Demo</Link>
+        </Slide>
+
+        <Slide>
           <Heading size={6} textColor="secondary">
             Error Handling
           </Heading>
@@ -328,6 +333,13 @@ export default class Presentation extends React.Component {
             <ListItem><Link href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror"><code>static getDerivedStateFromError()</code></Link></ListItem>
             <ListItem><Link href="https://reactjs.org/docs/react-component.html#componentdidcatch"><code>componentDidCatch()</code></Link></ListItem>
           </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            React Component LifeCycle methods before 16.3 version
+          </Heading>
+          <Image src={images.reactLifecycleMethodsOld} />
         </Slide>
 
         <Slide>
@@ -352,6 +364,7 @@ export default class Presentation extends React.Component {
             React Fiber Example
           </Heading>
           <iframe width="1200" height="600" src="https://www.youtube.com/embed/Qu_6ItnlDQg" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+          <CustomText>The React Fiber Triangle implementation is available <Link href="https://github.com/facebook/react/blob/master/fixtures/fiber-triangle/index.html">here.</Link></CustomText>
         </Slide>
 
         <Slide align="flex-start flex-start">
