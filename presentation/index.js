@@ -11,6 +11,7 @@ import { CustomText } from './components/CustomText';
 import { Margin } from './components/Margin';
 import { CustomLink as Link } from './components/CustomLink';
 import { Emphasize } from './components/Emphasize';
+import { Clock } from './components/Clock';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
@@ -225,6 +226,15 @@ export default class Presentation extends React.Component {
           ]}
           align="flex-start flex-start"
         />
+
+        <Slide>
+          <CodePane
+            lang="jsx"
+            textSize="1em"
+            source={require('raw-loader!../assets/code-examples/8-clock-without-props.example')}
+          />
+          <Clock/>
+        </Slide>
 
         <Slide>
           <Heading size={6} textColor="secondary">
