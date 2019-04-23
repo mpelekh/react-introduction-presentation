@@ -24,7 +24,7 @@ const theme = createTheme({
   secondary: '#61dafb',
   textColorLight: '#ffffff',
   textColorDark: '#778899',
-  linkColor: "#4682b4",
+  linkColor: "#4682b4"
 });
 
 const images = {
@@ -32,21 +32,21 @@ const images = {
   virtualDom: require('../assets/images/virtual-dom.png'),
   trianglesDemoWithTimeSlicing: require("../assets/images/triangles-demo-with-time-slicing.png"),
   trianglesDemoWithoutTimeSlicing: require("../assets/images/triangles-demo-without-time-slicing.png"),
-  reactLifecycleMethodsOld: require("../assets/images/react-component-lifecycle-methods-old.png"),
+  reactLifecycleMethodsOld: require("../assets/images/react-component-lifecycle-methods-old.png")
 };
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme} contentWidth={1200}>
-        <Slide transition={['zoom']} bgColor="primary">
+      <Deck transition={['zoom', 'fade', 'slide', 'spin']} transitionDuration={500} theme={theme} contentWidth={1200}>
+        <Slide>
           <ReactLogo />
           <Heading size={1} textColor="secondary">
             React Introduction
           </Heading>
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary" textColor="textColorLight">
+        <Slide textColor="textColorLight">
           <Heading size={2} textColor="secondary">
             Agenda
           </Heading>
@@ -64,7 +64,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide bgColor="primary" textColor="textColorLight">
+        <Slide textColor="textColorLight">
           <Heading size={6} textColor="secondary">
             What's React?
           </Heading>
@@ -76,7 +76,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide bgColor="primary" textColor="textColorLight">
+        <Slide>
           <CustomText textAlign="center">
             <Emphasize>JavaScript XML</Emphasize> (JSX) – an XML-like syntax extension of JavaScript.
           </CustomText>
@@ -96,7 +96,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide align="flex-start flex-start" width="1200px" >
+        <Slide align="flex-start flex-start">
           <CustomText textAlign="center">
             Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
           </CustomText>
