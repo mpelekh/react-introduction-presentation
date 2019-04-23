@@ -213,10 +213,11 @@ export default class Presentation extends React.Component {
 
         <CodeSlide
           transition={[]}
+          textSize="0.7em"
           lang="js"
           code={require('raw-loader!../assets/code-examples/10-clock-add-lifecycle-methods.example')}
           ranges={[
-            { loc: [0, 0], title: "Adding Lifecycle Methods to a Class" },
+            { loc: [0, 0], title: 'Adding Lifecycle Methods to a Class' },
             { loc: [6, 9] },
             { loc: [10, 13] },
             { loc: [14, 19] },
@@ -371,6 +372,56 @@ export default class Presentation extends React.Component {
           <Image src={images.trianglesDemoWithoutTimeSlicing} width={1200} />
           <Image src={images.trianglesDemoWithTimeSlicing} width={1200} />
         </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Typechecking with PropTypes
+          </Heading>
+          <CustomText>To run typechecking on the props for a component, you can assign the special <Emphasize>propTypes</Emphasize> property:</CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="0.6em"
+            source={require('raw-loader!../assets/code-examples/13-prop-types-function.example')}
+          />
+          <CustomText>or for class component:</CustomText>
+          <CodePane
+            lang="jsx"
+            textSize="0.6em"
+            source={require('raw-loader!../assets/code-examples/14-prop-types-component.example')}
+          />
+        </Slide>
+
+        <Slide>
+          <CustomText>
+            <Emphasize>PropTypes</Emphasize> exports a range of validators that can be used to make sure the data you receive is valid.
+            In the previous example, we were using <Emphasize>PropTypes.string.</Emphasize> When an invalid value is provided for a prop, a <Emphasize>warning will be shown in the JavaScript console.</Emphasize>
+          </CustomText>
+          <CustomText>For performance reasons, <Emphasize>propTypes</Emphasize> is only checked in <Emphasize>development mode.</Emphasize></CustomText>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          textSize="0.7em"
+          lang="js"
+          code={require('raw-loader!../assets/code-examples/15-available-prop-types.example')}
+          ranges={[
+            { loc: [0, 0], title: 'Here is an example documenting the different validators provided' },
+            { loc: [3, 12] },
+            { loc: [13, 17] },
+            { loc: [18, 20] },
+            { loc: [21, 24] },
+            { loc: [25, 28] },
+            { loc: [29, 35] },
+            { loc: [36, 38] },
+            { loc: [39, 41] },
+            { loc: [42, 47] },
+            { loc: [48, 51] },
+            { loc: [52, 54] },
+            { loc: [55, 70] },
+            { loc: [71, 94] }
+          ]}
+          align="flex-start flex-start"
+        />
 
       </Deck>
     );
