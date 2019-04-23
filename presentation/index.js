@@ -215,7 +215,7 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require('raw-loader!../assets/code-examples/10-clock-add-lifecycle-methods.example')}
           ranges={[
-            { loc: [0, 30], title: "Adding Lifecycle Methods to a Class" },
+            { loc: [0, 0], title: "Adding Lifecycle Methods to a Class" },
             { loc: [6, 9] },
             { loc: [10, 13] },
             { loc: [14, 19] },
@@ -245,6 +245,89 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code-examples/12-correct-set-state.example')}
           />
           <CustomText>The only place where you can assign <code>this.state</code> is the constructor.</CustomText>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            The Component Lifecycle
+          </Heading>
+          <CustomText>Each component has several “lifecycle methods” that you can override to run code at particular times in the process.</CustomText>
+          <CustomText>You can use <Link href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">this lifecycle diagram</Link> as a cheat sheet.</CustomText>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Mounting
+          </Heading>
+          <CustomText>
+            These methods are called in the following order when an instance of a component is being created and inserted into the DOM:
+          </CustomText>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#constructor"><code>constructor()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops"><code>static getDerivedStateFromProps()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#render"><code>render()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#componentdidmount"><code>componentDidMount()</code></Link></ListItem>
+          </List>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem>
+              <Link href="https://reactjs.org/docs/react-component.html#unsafe_componentwillmount"><strike><code>componentWillMount()</code></strike></Link><strong style={{ color: 'red' }}> - deprecated</strong>
+            </ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Updating
+          </Heading>
+          <CustomText>
+            An update can be caused by changes to props or state. These methods are called in the following order when a component is being re-rendered:
+          </CustomText>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromprops"><code>static getDerivedStateFromProps()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#shouldcomponentupdate"><code>shouldComponentUpdate()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#render"><code>render()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate"><code>getSnapshotBeforeUpdate()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#componentdidupdate"><code>componentDidUpdate()</code></Link></ListItem>
+          </List>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem>
+              <Link href="https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate"><strike><code>componentWillUpdate()</code></strike></Link><strong style={{ color: 'red' }}> - deprecated</strong>
+            </ListItem>
+            <ListItem>
+              <Link href="https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops"><strike><code>componentWillReceiveProps()</code></strike></Link><strong style={{ color: 'red' }}> - deprecated</strong>
+            </ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Unmounting
+          </Heading>
+          <CustomText>
+            This method is called when a component is being removed from the DOM:
+          </CustomText>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#componentwillunmount"><code>componentWillUnmount()</code></Link></ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Error Handling
+          </Heading>
+          <CustomText>
+            These methods are called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+          </CustomText>
+
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#static-getderivedstatefromerror"><code>static getDerivedStateFromError()</code></Link></ListItem>
+            <ListItem><Link href="https://reactjs.org/docs/react-component.html#componentdidcatch"><code>componentDidCatch()</code></Link></ListItem>
+          </List>
         </Slide>
 
         <Slide>
