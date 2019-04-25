@@ -433,6 +433,48 @@ export default class Presentation extends React.Component {
           align="flex-start flex-start"
         />
 
+        <Slide>
+          <Heading size={6} textColor="secondary" textAlign="left">
+            Error Boundaries
+          </Heading>
+          <CustomText>
+            Error boundaries are React components that <Emphasize>catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI</Emphasize>
+            {' '}
+            instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+          </CustomText>
+
+          <Margin top="45px" />
+
+          <Heading size={6} textColor="secondary" textAlign="left">
+            Error boundaries do not catch errors for:
+          </Heading>
+          <List textColor="textColorLight">
+            <ListItem textSize="xx-large">Event handlers</ListItem>
+            <ListItem textSize="xx-large">Asynchronous code (e.g. <code>setTimeout</code> or <code>requestAnimationFrame</code> callbacks)</ListItem>
+            <ListItem textSize="xx-large">Server side rendering</ListItem>
+            <ListItem textSize="xx-large">Errors thrown in the error boundary itself (rather than its children)</ListItem>
+          </List>
+        </Slide>
+
+        <CodeSlide
+          transition={[]}
+          textSize="0.7em"
+          lang="js"
+          code={require('raw-loader!../assets/code-examples/16-error-boundary.example')}
+          ranges={[
+            { loc: [0, 0], title: 'Error boundaries' },
+            { loc: [6, 10] },
+            { loc: [11, 15] },
+            { loc: [1, 5] },
+            { loc: [16, 21] },
+          ]}
+          align="flex-start flex-start"
+        />
+
+        <Slide>
+          <Link href="https://codesandbox.io/s/j4v2y35vny" textSize="larger">Component Error Boundaries Demo</Link>
+        </Slide>
+
       </Deck>
     );
   }
