@@ -491,6 +491,41 @@ export default class Presentation extends React.Component {
           <Link href="https://codesandbox.io/s/j4v2y35vny" textSize="larger">Component Error Boundaries Demo</Link>
         </Slide>
 
+        <Slide>
+          <Heading size={6} textColor="secondary">
+            Conclusions
+          </Heading>
+          <Margin />
+          <List textColor="textColorLight" style={{ listStyleType: 'none' }}>
+            <ListItem textSize="smaller"><Emphasize>React</Emphasize> — Just a UI library, not a framework.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>JSX</Emphasize> — Allows us to write HTML like syntax which gets transformed to lightweight JavaScript objects.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>Virtual DOM</Emphasize> — A JavaScript representation of the actual DOM.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>Reconciliation</Emphasize> — A process through which React updates the DOM.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>Fiber</Emphasize> — A new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>Function Component, Component/PureComponent</Emphasize> — The ways in which you create a new component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>render (method)</Emphasize> — Describes what the UI will look like for the particular component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>ReactDOM.render</Emphasize> — Renders a React component to a DOM node</ListItem>
+            <ListItem textSize="smaller"><Emphasize>props</Emphasize> — The data which is passed to the component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>propTypes</Emphasize> — Allows you to control the presence, or types of certain props passed to the child component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>defaultProps</Emphasize> — Allows you to set default props for your component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>state</Emphasize> — The internal data store (object) of a component.</ListItem>
+            <ListItem textSize="smaller"><Emphasize>setState</Emphasize> — A helper method used for updating the state of a component and re-rendering the UI.</ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading size={1} textColor="secondary">
+            Thank you!
+          </Heading>
+          <CustomText textAlign="center">Mykola Pelekh</CustomText>
+        </Slide>
+
+        <Slide>
+          <Heading size={1} textColor="secondary">
+            Questions?
+          </Heading>
+        </Slide>
+
       </Deck>
     );
   }
