@@ -332,6 +332,22 @@ export default class Presentation extends React.Component {
           <Link href="https://codesandbox.io/s/lro5jp75ll" textSize="larger">Component Lifecycle Demo</Link>
         </Slide>
 
+        <CodeSlide
+          transition={[]}
+          textSize="0.7em"
+          lang="js"
+          code={require('raw-loader!../assets/code-examples/17-react-renderer.example')}
+          ranges={[
+            { loc: [0, 0], title: 'Component vs PureComponent' },
+            { loc: [0, 80] },
+            { loc: [37, 51] },
+            { loc: [81, 86] },
+            { loc: [86, 119] },
+            { loc: [73, 76] },
+          ]}
+          align="flex-start flex-start"
+        />
+
         <Slide>
           <Heading size={6} textColor="secondary">
             Error Handling
