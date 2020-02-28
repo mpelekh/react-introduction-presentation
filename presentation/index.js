@@ -71,8 +71,8 @@ export default class Presentation extends React.Component {
           <List>
             <ListItem>React is a library for building composable user interfaces.</ListItem>
             <ListItem>Created by Jordan Walke in 2011, maintained by Facebook.</ListItem>
-            <ListItem>127,342 Stars on GitHub and 4,945,812 weekly downloads from NPM.</ListItem>
-            <ListItem>Actual version is 16.8.6</ListItem>
+            <ListItem>144k Stars on GitHub and 7,123,192 weekly downloads from NPM.</ListItem>
+            <ListItem>Actual version is 16.13.0</ListItem>
           </List>
         </Slide>
 
@@ -382,7 +382,7 @@ export default class Presentation extends React.Component {
             <ListItem textSize="smaller"><Link href="https://dou.ua/lenta/articles/react-fiber/" textAlign="left">Good article on DOU.</Link></ListItem>
             <ListItem textSize="smaller"><Link href="https://medium.com/react-in-depth/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react-e1c04700ef6e" textAlign="left">Another on medium.</Link></ListItem>
             <ListItem textSize="smaller"><Link href="https://www.youtube.com/watch?v=ZCuYPiUIONs" textAlign="left">Fascinating fiber review by Lin Clark (React Conf 2017).</Link></ListItem>
-            <ListItem textSize="smaller"><Link href="https://present-fiber-demo.herokuapp.com/" textAlign="left">Fiber example.</Link></ListItem>
+            <ListItem textSize="smaller"><Link href="https://mpelekh.github.io/react-stack-vs-fiber-demo/" textAlign="left">Fiber example.</Link></ListItem>
           </List>
         </Slide>
 
@@ -431,7 +431,7 @@ export default class Presentation extends React.Component {
           lang="js"
           code={require('raw-loader!../assets/code-examples/15-available-prop-types.example')}
           ranges={[
-            { loc: [0, 0], title: 'Here is an example documenting the different validators provided' },
+            { loc: [0, 0], title: 'Examples of the different validators' },
             { loc: [3, 12] },
             { loc: [13, 17] },
             { loc: [18, 20] },
