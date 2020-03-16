@@ -29,3 +29,5 @@ export class Clock extends React.Component {
     );
   }
 }
+
+Clock.displayName = "Clock"
